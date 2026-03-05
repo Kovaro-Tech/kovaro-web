@@ -1,36 +1,89 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/images/logos/logo.png'
 
 function Navbar() {
+  const [menuAbierto, setMenuAbierto] = useState(false)
+
   const scrollTo = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+    setMenuAbierto(false)
   }
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-purple-900/30 px-8 py-2 flex items-center justify-between z-50">
-      
-      <div className="flex items-center gap-1 cursor-pointer" onClick={() => scrollTo('hero')}>
-        <img src={logo} alt="Kovaro" className="h-16 w-auto object-contain" />
-        <span className="text-white font-bold text-xl tracking-[0.3em] uppercase" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-          KOVARO
-        </span>
-      </div>
+    <>
+      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-purple-900/30 px-8 py-2 flex items-center justify-between z-50">
 
-      <ul className="hidden md:flex gap-8 text-gray-400 text-sm absolute left-1/2 -translate-x-1/2">
-        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('servicios')}>Servicios</li>
-        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('nosotros')}>Nosotros</li>
-        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('proceso')}>Proceso</li>
-        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('portafolio')}>Portafolio</li>
-        <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('contacto')}>Contacto</li>
-      </ul>
+        <div className="flex items-center gap-1 cursor-pointer" onClick={() => scrollTo('hero')}>
+          <img src={logo} alt="Kovaro" className="h-14 w-auto object-contain" />
+          <span className="text-white font-bold text-xl tracking-[0.3em] uppercase" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            KOVARO
+          </span>
+        </div>
 
-      <button
-        onClick={() => scrollTo('contacto')}
-        className="bg-purple-600 hover:bg-purple-500 text-white text-sm px-5 py-2 rounded-full transition-colors"
-      >
-        Hablemos
-      </button>
+        <ul className="hidden md:flex gap-8 text-gray-400 text-sm absolute left-1/2 -translate-x-1/2">
+          <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('servicios')}>Servicios</li>
+          <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('nosotros')}>Nosotros</li>
+          <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('proceso')}>Proceso</li>
+          <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('portafolio')}>Portafolio</li>
+          <li className="hover:text-white cursor-pointer transition-colors" onClick={() => scrollTo('contacto')}>Contacto</li>
+        </ul>
 
-    </nav>
+        <div className="hidden md:block">
+          <button onClick={() => scrollTo('contacto')} className="bg-purple-600 hover:bg-purple-500 text-white text-sm px-5 py-2 rounded-full transition-colors">
+            Hablemos
+          </button>
+        </div>
+
+        <button className="md:hidden text-white z-50" onClick={() => setMenuAbierto(!menuAbierto)}>
+          {menuAbierto ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+
+      </nav>
+
+      <AnimatePresence>
+        {menuAbierto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-10 md:hidden"
+          >
+            {['servicios', 'nosotros', 'proceso', 'portafolio', 'contacto'].map((id, index) => (
+              <motion.span
+                key={id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => scrollTo(id)}
+                className="text-white text-3xl font-bold capitalize cursor-pointer hover:text-purple-400 transition-colors"
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </motion.span>
+            ))}
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              onClick={() => scrollTo('contacto')}
+              className="bg-purple-600 hover:bg-purple-500 text-white px-10 py-4 rounded-full font-medium transition-colors mt-4"
+            >
+              Hablemos
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
