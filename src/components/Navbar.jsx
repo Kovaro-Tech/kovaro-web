@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/images/logos/logo.webp'
 
-const links = ['servicios','nosotros', 'proceso', 'portafolio', 'contacto']
+const links = ['servicios', 'nosotros', 'proceso', 'portafolio', 'contacto']
 
 
 function Navbar() {
@@ -47,8 +47,8 @@ function Navbar() {
                             key={id}
                             onClick={() => scrollTo(id)}
                             className={`cursor-pointer transition-all capitalize px-3 py-1 rounded-full ${seccionActiva === id
-                                    ? 'text-white bg-purple-600'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'text-white bg-purple-600'
+                                : 'text-gray-400 hover:text-white'
                                 }`}            >
                             {id.charAt(0).toUpperCase() + id.slice(1)}
                         </li>
@@ -61,7 +61,11 @@ function Navbar() {
                     </button>
                 </div>
 
-                <button className="md:hidden text-white z-50" onClick={() => setMenuAbierto(!menuAbierto)}>
+                <button
+                    className="md:hidden text-white z-50"
+                    onClick={() => setMenuAbierto(!menuAbierto)}
+                    aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
+                >
                     {menuAbierto ? (
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

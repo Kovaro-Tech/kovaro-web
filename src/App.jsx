@@ -9,16 +9,18 @@ import Footer from './sections/Footer'
 
 function App() {
   return (
-    <div className="bg-black">
-      <Navbar />
-      <Hero />
-      <Servicios />
-      <Nosotros />
-      <Proceso />
-      <Portafolio />
-      <Contacto />
-      <Footer />
-    </div>
+    <main>
+      <div className="bg-black">
+        <Navbar />
+        <Hero />
+        <Servicios />
+        <Nosotros />
+        <Proceso />
+        <Portafolio />
+        <Contacto />
+        <Footer />
+      </div>
+    </main>
   )
 }
 
