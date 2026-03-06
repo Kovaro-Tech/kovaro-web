@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion'
 import AnimatedSection from '../components/AnimatedSection'
+import sebastianImg from '../assets/images/team/sebastian.webp'
+import melissaImg from '../assets/images/team/melissa.webp'
 
 const equipo = [
     {
@@ -8,7 +11,6 @@ const equipo = [
         experiencia: "Especialista en estrategias digitales que posicionan marcas y generan resultados reales en redes sociales y campañas.",
         anos: "2+",
         linkedin: "https://www.linkedin.com/in/gabriela-melissa-celi-993a08232/",
-        silueta: "https://api.dicebear.com/7.x/shapes/svg?seed=Melissa",
         alineacion: 'left',
         genero: 'mujer'
     },
@@ -19,32 +21,17 @@ const equipo = [
         experiencia: "Especialista en crear experiencias web modernas, rápidas y a medida que reflejan la identidad de cada cliente.",
         anos: "3+",
         linkedin: "https://www.linkedin.com/in/sebastian-gonzalez-088174238/",
-        silueta: "https://api.dicebear.com/7.x/shapes/svg?seed=Sebastian",
         alineacion: 'right',
         genero: 'hombre'
     },
 ]
 
-const SiluetaHombre = () => (
-    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-        <ellipse cx="100" cy="70" rx="45" ry="50" fill="rgba(120,60,180,0.15)" />
-        <rect x="55" y="115" width="90" height="130" rx="10" fill="rgba(120,60,180,0.12)" />
-        <rect x="20" y="120" width="38" height="100" rx="10" fill="rgba(120,60,180,0.1)" />
-        <rect x="142" y="120" width="38" height="100" rx="10" fill="rgba(120,60,180,0.1)" />
-        <rect x="60" y="240" width="35" height="130" rx="10" fill="rgba(120,60,180,0.1)" />
-        <rect x="105" y="240" width="35" height="130" rx="10" fill="rgba(120,60,180,0.1)" />
-    </svg>
+const AvatarMelissa = () => (
+    <img src={melissaImg} alt="Melissa Celi" className="h-full w-full object-cover object-top" />
 )
 
-const SiluetaMujer = () => (
-    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-        <ellipse cx="100" cy="65" rx="42" ry="48" fill="rgba(180,60,220,0.15)" />
-        <path d="M55 120 Q40 180 50 245 L150 245 Q160 180 145 120 Q125 105 100 108 Q75 105 55 120Z" fill="rgba(180,60,220,0.12)" />
-        <rect x="22" y="125" width="35" height="95" rx="12" fill="rgba(180,60,220,0.1)" />
-        <rect x="143" y="125" width="35" height="95" rx="12" fill="rgba(180,60,220,0.1)" />
-        <rect x="58" y="242" width="32" height="130" rx="10" fill="rgba(180,60,220,0.1)" />
-        <rect x="110" y="242" width="32" height="130" rx="10" fill="rgba(180,60,220,0.1)" />
-    </svg>
+const AvatarSebastian = () => (
+    <img src={sebastianImg} alt="Sebastián González" className="h-full w-full object-cover object-top" />
 )
 
 function Nosotros() {
@@ -63,32 +50,40 @@ function Nosotros() {
             <div className="max-w-5xl mx-auto flex flex-col gap-8">
                 {equipo.map((persona) => (
                     <AnimatedSection key={persona.nombre}>
-                        <div className={`flex ${persona.alineacion === 'right' ? 'ml-auto flex-row-reverse' : ''} w-full md:w-4/5 border border-purple-900/40 bg-white/5 rounded-3xl overflow-hidden hover:border-purple-500/60 transition-all duration-300 h-[500px]`}
+                        <div className={`flex flex-col md:flex-row ${persona.alineacion === 'right' ? 'md:ml-auto md:flex-row-reverse' : ''} w-full md:w-4/5 border border-purple-900/40 bg-white/5 rounded-3xl overflow-hidden hover:border-purple-500/60 transition-all duration-300`}
                             style={{ boxShadow: '0 0 40px rgba(162,21,239,0.07)' }}
                         >
-                            <div className="relative w-48 flex-shrink-0 overflow-hidden flex items-end justify-center">
-                                <div className="absolute inset-0 opacity-60">
-                                    {persona.genero === 'mujer' ? <SiluetaMujer /> : <SiluetaHombre />}
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/40" />
+                            {/* Avatar */}
+                            <div className={`relative w-full h-64 md:w-52 md:h-auto flex-shrink-0 flex items-end justify-center overflow-hidden ${persona.genero === 'mujer' ? 'bg-gradient-to-b from-fuchsia-950/40 to-purple-950/60' : 'bg-gradient-to-b from-purple-950/40 to-violet-950/60'}`}>
+                                <motion.div
+                                    className="w-full h-full"
+                                    animate={{ y: [0, -6, 0] }}
+                                    transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: persona.genero === 'mujer' ? 0 : 0.8 }}
+                                >
+                                    {persona.genero === 'mujer' ? <AvatarMelissa /> : <AvatarSebastian />}
+                                </motion.div>
+                                <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-8 blur-xl rounded-full ${persona.genero === 'mujer' ? 'bg-fuchsia-500/30' : 'bg-purple-500/30'}`} />
                             </div>
 
-                            <div className="flex flex-col justify-center px-10 py-8 flex-1">
-                                <p className="text-purple-400 text-lg font-medium italic mb-3">"{persona.frase}"</p>
-                                <h3 className="text-white font-bold text-3xl">{persona.nombre}</h3>
+                            {/* Contenido */}
+                            <div className="flex flex-col justify-center px-6 md:px-10 py-8 flex-1">
+                                <p className={`text-base md:text-lg font-medium italic mb-3 ${persona.genero === 'mujer' ? 'text-fuchsia-400' : 'text-purple-400'}`}>"{persona.frase}"</p>
+                                <h3 className="text-white font-bold text-2xl md:text-3xl">{persona.nombre}</h3>
                                 <span className="text-gray-400 text-sm font-medium mb-4">{persona.rol}</span>
                                 <p className="text-gray-400 text-sm leading-relaxed">{persona.experiencia}</p>
 
                                 <div className="flex items-center gap-8 mt-6">
                                     <div>
-                                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-400">{persona.anos}</span>
+                                        <span className={`text-3xl font-bold text-transparent bg-clip-text ${persona.genero === 'mujer' ? 'bg-gradient-to-r from-fuchsia-400 to-purple-400' : 'bg-gradient-to-r from-purple-500 to-fuchsia-400'}`}>
+                                            {persona.anos}
+                                        </span>
                                         <p className="text-gray-400 text-xs mt-1">años de experiencia</p>
                                     </div>
                                     <a
                                         href={persona.linkedin}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="bg-purple-600 hover:bg-purple-500 text-white text-sm px-6 py-2 rounded-full transition-colors"
+                                        className={`text-white text-sm px-6 py-2 rounded-full transition-colors ${persona.genero === 'mujer' ? 'bg-fuchsia-600 hover:bg-fuchsia-500' : 'bg-purple-600 hover:bg-purple-500'}`}
                                     >
                                         Ver LinkedIn
                                     </a>
