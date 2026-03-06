@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
 * {
+  font-family: 'Orbitron', sans-serif;
+}
+
+button {
   font-family: 'Orbitron', sans-serif;
 }
 
