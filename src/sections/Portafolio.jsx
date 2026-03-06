@@ -106,7 +106,7 @@ function ProyectoCard({ proyecto }) {
                     <span className={`text-xs font-medium uppercase tracking-wider px-2.5 py-1 rounded-full border ${c.tag}`}>
                         {proyecto.categoria}
                     </span>
-                    <span className="text-gray-600 text-xs">{proyecto.detalle}</span>
+                    <span className="text-gray-500 text-xs">{proyecto.detalle}</span>
                 </div>
 
                 <h3 className="text-white font-bold text-xl mb-2">{proyecto.nombre}</h3>
@@ -125,7 +125,7 @@ function ProyectoCard({ proyecto }) {
                             <span aria-hidden="true">→</span>
                         </a>
                     ) : (
-                        <span className="text-gray-600 text-xs italic">Próximamente disponible</span>
+                        <span className="text-gray-500 text-xs italic">Próximamente disponible</span>
                     )}
                 </div>
             </div>
@@ -192,7 +192,7 @@ function Portafolio() {
                 ))}
 
                 {proyectosFiltrados.length === 0 && (
-                    <div className="col-span-3 text-center py-16 text-gray-600">
+                    <div className="col-span-3 text-center py-16 text-gray-500">
                         No hay proyectos en esta categoría todavía.
                     </div>
                 )}

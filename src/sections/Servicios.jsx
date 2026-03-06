@@ -179,7 +179,7 @@ function Servicios() {
                   <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400 text-2xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                     construida para durar.
                   </h3>
-                  <p className="text-gray-600 text-xs mt-2">Toca cada servicio para saber más</p>
+                  <p className="text-gray-500 text-xs mt-2">Toca cada servicio para saber más</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -214,7 +214,7 @@ function Servicios() {
                   <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-400 text-2xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                     imposible de ignorar.
                   </h3>
-                  <p className="text-gray-600 text-xs mt-2">Toca cada servicio para saber más</p>
+                  <p className="text-gray-500 text-xs mt-2">Toca cada servicio para saber más</p>
                 </div>
 
                 <div className="flex flex-col gap-2">

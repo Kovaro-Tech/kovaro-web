@@ -94,7 +94,7 @@ function Contacto() {
                 <AnimatedSection>
                     <div className="flex items-center gap-4 my-10 max-w-xs mx-auto">
                         <div className="flex-1 h-px bg-purple-900/40" />
-                        <span className="text-gray-600 text-xs uppercase tracking-widest">o encuéntranos en</span>
+                        <span className="text-gray-500 text-xs uppercase tracking-widest">o encuéntranos en</span>
                         <div className="flex-1 h-px bg-purple-900/40" />
                     </div>
                 </AnimatedSection>

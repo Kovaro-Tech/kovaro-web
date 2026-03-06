@@ -51,7 +51,7 @@ function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <p className="text-gray-600 text-xs">
+                <p className="text-gray-400 text-xs">
                     © {new Date().getFullYear()} Kovaro. Todos los derechos reservados.
                 </p>
 
@@ -64,7 +64,7 @@ function Footer() {
                             target="_blank"
                             rel="noreferrer"
                             aria-label={red.nombre}
-                            className="text-gray-600 hover:text-purple-400 transition-colors duration-300"
+                            className="text-gray-500 hover:text-purple-400 transition-colors duration-300"
                         >
                             {red.icon}
                         </a>
