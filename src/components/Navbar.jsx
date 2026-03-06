@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '../assets/images/logos/logo.png'
+import logo from '../assets/images/logos/logo.webp'
 
 const links = ['servicios','nosotros', 'proceso', 'portafolio', 'contacto']
 

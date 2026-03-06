@@ -3,3 +3,13 @@
 * {
   font-family: 'Orbitron', sans-serif;
 }
+
+html {
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}

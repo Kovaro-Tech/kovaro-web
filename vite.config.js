@@ -7,4 +7,22 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'framer': ['framer-motion'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 600,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      }
+    }
+  }
 })
