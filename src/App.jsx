@@ -12,8 +12,8 @@ function App() {
     <div className="bg-black">
       <Navbar />
       <Hero />
-      <Nosotros />
       <Servicios />
+      <Nosotros />
       <Proceso />
       <Portafolio />
       <Contacto />

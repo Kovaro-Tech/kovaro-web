@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/images/logos/logo.png'
 
-const links = ['nosotros', 'servicios', 'proceso', 'portafolio', 'contacto']
+const links = ['servicios','nosotros', 'proceso', 'portafolio', 'contacto']
+
 
 function Navbar() {
     const [menuAbierto, setMenuAbierto] = useState(false)
@@ -103,6 +104,7 @@ function Navbar() {
                             transition={{ delay: 0.6 }}
                             onClick={() => scrollTo('contacto')}
                             className="bg-purple-600 hover:bg-purple-500 text-white px-10 py-4 rounded-full font-medium transition-colors mt-4"
+                            style={{ fontFamily: 'Orbitron, sans-serif' }}
                         >
                             Hablemos
                         </motion.button>
