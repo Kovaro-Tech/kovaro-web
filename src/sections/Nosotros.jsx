@@ -40,8 +40,16 @@ function Nosotros() {
 
             <AnimatedSection>
                 <div className="max-w-5xl mx-auto text-center mb-20">
-                    <h2 className="text-4xl font-bold text-white mb-4">Quiénes somos</h2>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <span className="text-purple-500 text-xs tracking-[0.5em] uppercase mb-4 block font-medium">
+                        Quiénes somos
+                    </span>
+                    <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Las personas detrás{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">
+                            de Kovaro.
+                        </span>
+                    </h2>
+                    <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
                         Kovaro es una agencia digital formada por dos especialistas con un objetivo claro: llevar tu negocio al siguiente nivel.
                     </p>
                 </div>
