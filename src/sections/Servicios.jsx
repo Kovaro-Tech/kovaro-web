@@ -117,7 +117,7 @@ function ServicioItem({ item, color }) {
         className="overflow-hidden transition-all duration-300"
         style={{ maxHeight: abierto ? '80px' : '0px', opacity: abierto ? 1 : 0 }}
       >
-        <p className="text-gray-500 text-xs leading-relaxed mt-3 pl-6 border-l"
+        <p className="text-gray-400 text-xs leading-relaxed mt-3 pl-6 border-l"
           style={{ borderColor: c.dot }}
         >
           {item.descripcion}
@@ -149,7 +149,7 @@ function Servicios() {
               En un solo lugar.
             </span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
             Sin intermediarios, sin complicaciones. Nos encargamos de todo para que tú te enfoques en lo que importa — tu negocio.
           </p>
         </div>
@@ -243,7 +243,7 @@ function Servicios() {
                     Marketing sin web no convierte.
                   </span>
                 </h4>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed">
                   Somos dos especialistas trabajando como uno — el mismo compromiso, la misma visión, enfocados en un solo objetivo: que tu negocio crezca.
                 </p>
               </div>

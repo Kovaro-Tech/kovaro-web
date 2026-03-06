@@ -76,13 +76,13 @@ function Nosotros() {
                             <div className="flex flex-col justify-center px-10 py-8 flex-1">
                                 <p className="text-purple-400 text-lg font-medium italic mb-3">"{persona.frase}"</p>
                                 <h3 className="text-white font-bold text-3xl">{persona.nombre}</h3>
-                                <span className="text-gray-500 text-sm font-medium mb-4">{persona.rol}</span>
+                                <span className="text-gray-400 text-sm font-medium mb-4">{persona.rol}</span>
                                 <p className="text-gray-400 text-sm leading-relaxed">{persona.experiencia}</p>
 
                                 <div className="flex items-center gap-8 mt-6">
                                     <div>
                                         <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-400">{persona.anos}</span>
-                                        <p className="text-gray-500 text-xs mt-1">años de experiencia</p>
+                                        <p className="text-gray-400 text-xs mt-1">años de experiencia</p>
                                     </div>
                                     <a
                                         href={persona.linkedin}

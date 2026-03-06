@@ -12,4 +12,7 @@ html {
   html {
     font-size: 15px;
   }
+  [class*="blur-"] {
+    display: none;
+  }
 }

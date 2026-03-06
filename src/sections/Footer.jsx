@@ -5,7 +5,7 @@ function Footer() {
         
         <span className="text-white font-bold text-xl tracking-widest">KOVARO</span>
 
-        <p className="text-gray-500 text-sm">
+        <p className="text-gray-400 text-sm">
           © 2026 Kovaro. Todos los derechos reservados.
         </p>
 
