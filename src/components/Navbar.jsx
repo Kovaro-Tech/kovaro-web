@@ -41,7 +41,7 @@ function Navbar() {
                     </span>
                 </div>
 
-                <ul className="hidden md:flex gap-8 text-sm absolute left-1/2 -translate-x-1/2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <ul className="hidden lg:flex gap-8 text-sm absolute left-1/2 -translate-x-1/2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                     {links.map((id) => (
                         <li
                             key={id}
@@ -55,14 +55,14 @@ function Navbar() {
                     ))}
                 </ul>
 
-                <div className="hidden md:block">
+                <div className="hidden lg:block">
                     <button onClick={() => scrollTo('contacto')} className="bg-purple-600 hover:bg-purple-500 text-white text-sm px-5 py-2 rounded-full transition-colors">
                         Hablemos
                     </button>
                 </div>
 
                 <button
-                    className="md:hidden text-white z-50"
+                    className="lg:hidden text-white z-50"
                     onClick={() => setMenuAbierto(!menuAbierto)}
                     aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
                 >
@@ -86,7 +86,7 @@ function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-10 md:hidden"
+                        className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-10 lg:hidden"
                     >
                         {links.map((id, index) => (
                             <motion.span

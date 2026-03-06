@@ -12,7 +12,10 @@ html {
   html {
     font-size: 15px;
   }
-  [class*="blur-"] {
+}
+
+@media (max-width: 768px) {
+  [class*="blur-["] {
     display: none;
   }
 }
