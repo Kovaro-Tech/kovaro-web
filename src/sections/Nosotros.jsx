@@ -54,7 +54,7 @@ function Nosotros() {
                             style={{ boxShadow: '0 0 40px rgba(162,21,239,0.07)' }}
                         >
                             {/* Avatar */}
-                            <div className={`relative w-full h-64 md:w-52 md:h-auto flex-shrink-0 flex items-end justify-center overflow-hidden ${persona.genero === 'mujer' ? 'bg-gradient-to-b from-fuchsia-950/40 to-purple-950/60' : 'bg-gradient-to-b from-purple-950/40 to-violet-950/60'}`}>
+                            <div className={`relative w-full h-80 md:w-52 md:h-auto flex-shrink-0 flex items-end justify-center overflow-hidden ${persona.genero === 'mujer' ? 'bg-gradient-to-b from-fuchsia-950/40 to-purple-950/60' : 'bg-gradient-to-b from-purple-950/40 to-violet-950/60'}`}>
                                 <motion.div
                                     className="w-full h-full"
                                     animate={{ y: [0, -6, 0] }}
