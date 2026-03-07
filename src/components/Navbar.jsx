@@ -4,10 +4,16 @@ import logo from '../assets/images/logos/logo.webp'
 
 const links = ['servicios', 'nosotros', 'proceso', 'portafolio', 'contacto']
 
-
 function Navbar() {
     const [menuAbierto, setMenuAbierto] = useState(false)
     const [seccionActiva, setSeccionActiva] = useState('')
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 50)
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -30,9 +36,15 @@ function Navbar() {
         setMenuAbierto(false)
     }
 
+    const navBg = menuAbierto
+        ? 'bg-black border-purple-900/30'
+        : scrolled
+            ? 'bg-black/90 backdrop-blur-sm border-purple-900/30'
+            : 'bg-transparent border-transparent'
+
     return (
         <>
-            <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-purple-900/30 px-8 py-2 flex items-center justify-between z-50">
+            <nav className={`fixed top-0 w-full px-8 py-2 flex items-center justify-between z-50 border-b transition-all duration-300 ${navBg}`}>
 
                 <div className="flex items-center gap-1 cursor-pointer" onClick={() => scrollTo('hero')}>
                     <img src={logo} alt="Kovaro" className="h-14 w-auto object-contain" />
@@ -49,7 +61,8 @@ function Navbar() {
                             className={`cursor-pointer transition-all capitalize px-3 py-1 rounded-full ${seccionActiva === id
                                 ? 'text-white bg-purple-600'
                                 : 'text-gray-400 hover:text-white'
-                                }`}            >
+                                }`}
+                        >
                             {id.charAt(0).toUpperCase() + id.slice(1)}
                         </li>
                     ))}

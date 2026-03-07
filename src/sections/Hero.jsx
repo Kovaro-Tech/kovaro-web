@@ -75,7 +75,10 @@ function Hero() {
     return (
         <section
             id="hero"
-            className="min-h-screen bg-black flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
+            className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
+            style={{
+                background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(120,40,200,0.15) 0%, rgba(217,70,239,0.08) 40%, #000 70%)'
+            }}
         >
             {/* Glow de fondo */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-purple-700/10 blur-[140px] pointer-events-none rounded-full" />
