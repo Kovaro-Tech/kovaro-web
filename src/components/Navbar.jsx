@@ -22,7 +22,7 @@ function Navbar() {
                     if (entry.isIntersecting) setSeccionActiva(entry.target.id)
                 })
             },
-            { threshold: 0.2 }
+            { rootMargin: '-30% 0px -30% 0px', threshold: 0 }
         )
         links.forEach((id) => {
             const el = document.getElementById(id)

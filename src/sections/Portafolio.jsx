@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedSection from '../components/AnimatedSection'
 
@@ -87,6 +87,14 @@ export default function Portafolio() {
     const [activo, setActivo] = useState(proyectos[0].id)
     const proyecto = proyectos.find(p => p.id === activo)
     const c = colorMap[proyecto.color]
+
+    // Precargar todas las imágenes para evitar layout shift al cambiar proyecto
+    useEffect(() => {
+        proyectos.forEach(p => {
+            const d = new window.Image(); d.src = p.desktop
+            const m = new window.Image(); m.src = p.mobile
+        })
+    }, [])
 
     return (
         <section id="portafolio" className="bg-black py-24 px-6 overflow-hidden relative">
@@ -196,12 +204,14 @@ export default function Portafolio() {
                                         marginLeft: 'auto',
                                         marginRight: 'auto',
                                         maxWidth: 820,
+                                    aspectRatio: '16/9',
                                     }}
                                 >
                                     <img
                                         src={proyecto.desktop}
                                         alt={`${proyecto.nombre} — vista desktop`}
                                         className="w-full h-auto block rounded-lg"
+                                        style={{ aspectRatio: '16/9' }}
                                         draggable={false}
                                     />
                                 </motion.div>
@@ -209,12 +219,12 @@ export default function Portafolio() {
                                 {/* iPhone — pegado encima de la Mac, esquina inferior izquierda */}
                                 <motion.div
                                     className="absolute z-20"
-                                    initial={{ opacity: 0, x: 20, y: 20 }}
+                                    initial={{ opacity: 0, x: -20, y: 20 }}
                                     animate={{ opacity: 1, x: 0, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.15 }}
                                     style={{
                                         bottom: 0,
-                                        right: '8%',
+                                        left: '8%',
                                         width: 260,
                                         filter: `drop-shadow(0 28px 56px rgba(0,0,0,0.85)) drop-shadow(0 0 30px rgba(${c.glow},0.25))`,
                                     }}
@@ -237,8 +247,7 @@ export default function Portafolio() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4 }}
                                 style={{
-                                    width: 470,
-                                    maxWidth: '100vw',
+                                    width: 320,
                                     filter: `drop-shadow(0 20px 40px rgba(0,0,0,0.7)) drop-shadow(0 0 20px rgba(${c.glow},0.2))`,
                                 }}
                             >
