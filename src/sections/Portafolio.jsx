@@ -219,14 +219,14 @@ export default function Portafolio() {
                                 {/* iPhone — pegado encima de la Mac, esquina inferior izquierda */}
                                 <motion.div
                                     className="absolute z-20"
-                                    initial={{ opacity: 0, x: -20, y: 20 }}
+                                    initial={{ opacity: 0, x: 20, y: 20 }}
                                     animate={{ opacity: 1, x: 0, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.15 }}
                                     style={{
                                         bottom: 0,
-                                        left: '8%',
+                                        right: '8%',
                                         width: 260,
-                                        filter: `drop-shadow(0 28px 56px rgba(0,0,0,0.85)) drop-shadow(0 0 30px rgba(${c.glow},0.25))`,
+                                        // filter: `drop-shadow(0 28px 56px rgba(0,0,0,0.85)) drop-shadow(0 0 30px rgba(${c.glow},0.25))`,
                                     }}
                                 >
                                     <img
