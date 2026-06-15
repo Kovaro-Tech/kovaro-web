@@ -1,6 +1,6 @@
 import AnimatedSection from '../components/AnimatedSection'
 
-const WHATSAPP_NUMBER = '593958759328'
+const WHATSAPP_NUMBER = '593992612833'
 const WHATSAPP_MESSAGE = 'Hola! Me interesa conocer más sobre los servicios de Kovaro.'
 const EMAIL = 'contact@kovarotech.com'
 const INSTAGRAM = 'https://www.instagram.com/kovarotech/'

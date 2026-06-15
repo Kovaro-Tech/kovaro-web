@@ -1,6 +1,6 @@
 import logo from '../assets/images/logos/logo.webp'
 
-const WHATSAPP_NUMBER = '593958759328'
+const WHATSAPP_NUMBER = '593992612833'
 const WHATSAPP_MESSAGE = 'Hola! Me interesa conocer más sobre los servicios de Kovaro.'
 const INSTAGRAM = 'https://www.instagram.com/kovarotech/'
 const LINKEDIN = 'https://www.linkedin.com/in/kovaro-tech-b1887a3b5/'
