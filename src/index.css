@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/inter-tight-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin.woff2') format('woff2');
+}
+
 /* ==========================================================================
    KOVARO — Design tokens
    Dark premium / editorial tech. El acento se usa poco y a propósito.
@@ -209,3 +224,5 @@ section[id] {
 @utility animate-marquee {
   animation: k-marquee 46s linear infinite;
 }
+
+.legal-copy a { color: var(--color-bone); text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }

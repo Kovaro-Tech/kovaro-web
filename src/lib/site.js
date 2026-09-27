@@ -12,17 +12,7 @@ import carlaMobile from '../assets/images/portafolio/shots/carla_manrique_mobile
 
 /* ── Contacto ────────────────────────────────────────────────────────────── */
 
-export const WHATSAPP_NUMBER = '593992612833'
-export const WHATSAPP_MESSAGE =
-  'Hola! Me interesa conocer más sobre los servicios de Kovaro.'
-export const EMAIL = 'contact@kovarotech.com'
-export const INSTAGRAM = 'https://www.instagram.com/kovarotech/'
-export const LINKEDIN = 'https://www.linkedin.com/in/kovaro-tech-b1887a3b5/'
-export const LOCATION = 'Quito, Ecuador'
-
-export const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE,
-)}`
+export { WHATSAPP_NUMBER, WHATSAPP_MESSAGE, EMAIL, INSTAGRAM, LINKEDIN, LOCATION, whatsappUrl } from './contact.js'
 
 /* ── Navegación ──────────────────────────────────────────────────────────── */
 
@@ -44,8 +34,8 @@ export const capabilities = [
     num: '01',
     key: 'BUILD',
     titulo: 'Construimos',
-    claim: 'Producto digital a medida, del código a la infraestructura.',
-    items: ['Web', 'Software', 'Ecommerce', 'Integraciones'],
+    claim: 'Desarrollo web, software y automatización a medida.',
+    items: ['Desarrollo web', 'Software', 'Ecommerce', 'Integraciones'],
     mas: [
       'Sistemas internos',
       'APIs',
@@ -69,7 +59,7 @@ export const capabilities = [
     key: 'GROW',
     titulo: 'Hacemos crecer',
     claim: 'Convertimos atención en crecimiento medible.',
-    items: ['Marketing', 'Contenido', 'Campañas', 'Analítica'],
+    items: ['Marketing digital', 'Contenido', 'Campañas', 'Analítica'],
     mas: ['Social media', 'Optimización de conversión', 'Estudio de mercado'],
   },
 ]

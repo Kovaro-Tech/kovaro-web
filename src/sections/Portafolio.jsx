@@ -85,13 +85,13 @@ function Portafolio() {
                   <div className="flex items-end gap-3 sm:gap-4">
                     <BrowserFrame
                       src={item.desktop}
-                      alt={`${item.nombre} — vista de escritorio`}
+                      alt={`Sitio web desarrollado por Kovaro Tech para ${item.nombre}, vista de escritorio`}
                       label={item.nombre}
                       className="min-w-0 flex-1"
                     />
                     <PhoneFrame
                       src={item.mobile}
-                      alt={`${item.nombre} — vista móvil`}
+                      alt={`Sitio web de ${item.nombre}, vista móvil`}
                       className="hidden w-[96px] shrink-0 sm:block lg:w-[112px]"
                     />
                   </div>
@@ -106,7 +106,7 @@ function Portafolio() {
 
           {/* Ficha del proyecto activo + selector */}
           <div className="lg:col-span-4">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={proyecto.id}
                 initial={{ opacity: 0, y: 10 }}

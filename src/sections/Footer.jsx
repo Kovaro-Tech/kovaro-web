@@ -25,10 +25,6 @@ function Columna({ titulo, children }) {
 }
 
 function Footer() {
-  const irA = (event, id) => {
-    event.preventDefault()
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <footer className="relative overflow-hidden pt-24">
@@ -49,8 +45,7 @@ function Footer() {
               {navLinks.map(({ id, label }) => (
                 <li key={id}>
                   <a
-                    href={`#${id}`}
-                    onClick={(event) => irA(event, id)}
+                    href={`/#${id}`}
                     className="text-body text-muted transition-colors hover:text-bone"
                   >
                     {label}
@@ -59,8 +54,7 @@ function Footer() {
               ))}
               <li>
                 <a
-                  href="#contacto"
-                  onClick={(event) => irA(event, 'contacto')}
+                  href="/#contacto"
                   className="text-body text-muted transition-colors hover:text-bone"
                 >
                   Contacto
@@ -116,8 +110,13 @@ function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-8 text-center sm:flex-row sm:text-left">
           <p className="label-mono text-faint">
-            © {new Date().getFullYear()} Kovaro
+            © {new Date().getFullYear()} Kovaro Tech
           </p>
+          <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-5 text-sm text-muted">
+            <a href="/privacidad" className="hover:text-bone">Privacidad</a>
+            <a href="/cookies" className="hover:text-bone">Cookies</a>
+            <a href="/terminos" className="hover:text-bone">Términos</a>
+          </nav>
           <p className="label-mono text-faint">
             Technology · Design · Growth
           </p>

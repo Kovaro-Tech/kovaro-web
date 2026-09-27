@@ -18,15 +18,11 @@ function Hero() {
     reduce
       ? {}
       : {
-          initial: { opacity: 0, y: 22 },
+          initial: false,
           animate: { opacity: 1, y: 0 },
           transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
         }
 
-  const irA = (event, id) => {
-    event.preventDefault()
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <section
@@ -63,7 +59,7 @@ function Hero() {
         >
           <span className="text-accent">K/</span>
           <span className="h-px w-6 bg-line" aria-hidden="true" />
-          <span>Estudio digital — Quito, Ecuador</span>
+          <span>Estudio digital — Ecuador</span>
         </motion.p>
 
         <h1 className="text-display-xl max-w-[22ch]">
@@ -92,8 +88,8 @@ function Hero() {
           {...rise(0.42)}
           className="text-body-lg mt-10 max-w-xl text-muted text-pretty"
         >
-          Diseño, ingeniería y estrategia para empresas que necesitan que lo
-          digital produzca resultados, no solo presencia.
+          Desarrollo web, software y estrategia digital para empresas que
+          necesitan convertir ideas en resultados.
         </motion.p>
 
         <motion.div
@@ -110,7 +106,6 @@ function Hero() {
           </Button>
           <Button
             href="#portafolio"
-            onClick={(event) => irA(event, 'portafolio')}
             variant="ghost"
             arrow="down"
             className="h-12 px-5"

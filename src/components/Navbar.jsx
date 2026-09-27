@@ -69,11 +69,6 @@ function Navbar() {
     }
   }, [open])
 
-  const go = (event, id) => {
-    event.preventDefault()
-    setOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <>
@@ -98,8 +93,8 @@ function Navbar() {
           aria-label="Navegación principal"
         >
           <a
-            href="#hero"
-            onClick={(event) => go(event, 'hero')}
+            href="/"
+            onClick={() => setOpen(false)}
             className="flex items-center gap-2.5"
             aria-label="Kovaro — inicio"
           >
@@ -110,8 +105,8 @@ function Navbar() {
             {navLinks.map(({ id, label }) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
-                  onClick={(event) => go(event, id)}
+                  href={`/#${id}`}
+                  onClick={() => setOpen(false)}
                   className={`relative rounded-full px-3.5 py-2 text-sm transition-colors duration-200 ${
                     active === id ? 'text-bone' : 'text-muted hover:text-bone'
                   }`}
@@ -190,8 +185,8 @@ function Navbar() {
                     className="border-b border-line-soft"
                   >
                     <a
-                      href={`#${id}`}
-                      onClick={(event) => go(event, id)}
+                      href={`/#${id}`}
+                      onClick={() => setOpen(false)}
                       className="flex items-baseline gap-4 py-5"
                     >
                       <span className="label-mono text-faint">
@@ -224,7 +219,7 @@ function Navbar() {
             </div>
 
             <div className="container-k flex items-center justify-between pb-10 label-mono text-faint">
-              <span>Quito · Ecuador</span>
+              <span>Ecuador</span>
               <span className="hidden sm:block">Build · Position · Grow</span>
             </div>
           </motion.div>

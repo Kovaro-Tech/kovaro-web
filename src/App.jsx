@@ -1,3 +1,6 @@
+import Legal from './pages/Legal'
+import NotFound from './pages/NotFound'
+import { getPage } from './lib/seo'
 import Navbar from './components/Navbar'
 import GridRails from './components/GridRails'
 import Hero from './sections/Hero'
@@ -11,14 +14,16 @@ import Footer from './sections/Footer'
 
 /**
  * Siete momentos, no diez. El trabajo va antes del manifiesto:
- * primero se ve lo que hacemos, después por qué lo hacemos así.
+ * primero se ve lo que hacemos, despuÃ©s por quÃ© lo hacemos asÃ­.
  */
-function App() {
+function App({ path = '/' }) {
+  const page = getPage(path)
   return (
     <>
       <GridRails />
       <Navbar />
       <main id="contenido" className="relative z-10">
+        {page.kind === 'home' ? <>
         <Hero />
         <Servicios />
         <Portafolio />
@@ -26,6 +31,7 @@ function App() {
         <Nosotros />
         <Proceso />
         <Contacto />
+        </> : page.kind === 'legal' ? <Legal page={page} /> : <NotFound />}
       </main>
       <Footer />
     </>

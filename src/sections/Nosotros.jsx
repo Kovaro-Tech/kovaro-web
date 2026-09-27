@@ -27,7 +27,7 @@ function Persona({ persona, indice, delay }) {
 
         <div className="mt-5 flex items-start justify-between gap-4">
           <div>
-            <h4 className="text-subheading">{persona.nombre}</h4>
+            <h3 className="text-subheading">{persona.nombre}</h3>
             <p className="label-mono mt-2 text-accent">{persona.rol}</p>
           </div>
 
@@ -67,6 +67,7 @@ function Nosotros() {
             <p className="text-body-lg text-muted text-pretty">
               Combinamos ingeniería, diseño y crecimiento para construir
               experiencias digitales que resuelven problemas reales de negocio.
+              Trabajamos con empresas y profesionales en todo Ecuador, de forma remota.
             </p>
 
             <ul className="mt-9 space-y-3">
