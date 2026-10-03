@@ -22,16 +22,16 @@ export function BrowserFrame({ src, alt, label, priority = false, className = ''
           </span>
         )}
       </span>
-      <img
+      {src ? <img
         src={src}
         alt={alt}
         width={1440}
         height={900}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        className="block w-full"
+        className="block aspect-[8/5] w-full object-cover object-top"
         draggable={false}
-      />
+      /> : <span aria-hidden="true" className="block aspect-[8/5] w-full" />}
     </span>
   )
 }
@@ -42,7 +42,7 @@ export function PhoneFrame({ src, alt, className = '' }) {
       className={`block overflow-hidden rounded-[1.75rem] border border-line bg-surface p-1.5 ${className}`}
     >
       <span className="block overflow-hidden rounded-[1.35rem]">
-        <img
+        {src ? <img
           src={src}
           alt={alt}
           width={440}
@@ -51,7 +51,7 @@ export function PhoneFrame({ src, alt, className = '' }) {
           decoding="async"
           className="block aspect-[9/19] w-full object-cover object-top"
           draggable={false}
-        />
+        /> : <span aria-hidden="true" className="block aspect-[9/19] w-full" />}
       </span>
     </span>
   )

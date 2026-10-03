@@ -9,6 +9,10 @@ import proteDesktop from '../assets/images/portafolio/shots/protecompu_desktop.w
 import proteMobile from '../assets/images/portafolio/shots/protecompu_mobile.webp'
 import carlaDesktop from '../assets/images/portafolio/shots/carla_manrique_desktop.webp'
 import carlaMobile from '../assets/images/portafolio/shots/carla_manrique_mobile.webp'
+import expoaseoDesktop from '../assets/images/portafolio/shots/expoaseo_desktop.webp'
+import expoaseoMobile from '../assets/images/portafolio/shots/expoaseo_mobile.webp'
+import carolinaDesktop from '../assets/images/portafolio/shots/carolina_alvarez_desktop.webp'
+import carolinaMobile from '../assets/images/portafolio/shots/carolina_alvarez_mobile.webp'
 
 /* ── Contacto ────────────────────────────────────────────────────────────── */
 
@@ -66,13 +70,13 @@ export const capabilities = [
 
 /* ── Trabajo seleccionado ────────────────────────────────────────────────────
    Solo proyectos reales. Sin métricas inventadas.
-   `url` queda vacío a propósito: añádelo cuando quieras enlazar el sitio vivo.
+   Añadir un proyecto requiere sus capturas y un objeto en este array.
+   El orden del array determina el selector. `caso` y `url` son opcionales.
    -------------------------------------------------------------------------- */
 
 export const proyectos = [
   {
     id: 'protecompu',
-    num: '01',
     nombre: 'Protecompu',
     corto: 'Protecompu',
     industria: 'Infraestructura TI · Ecuador',
@@ -94,8 +98,53 @@ export const proyectos = [
     mobile: proteMobile,
   },
   {
+    id: 'expoaseo',
+    nombre: 'EXPOASEO',
+    corto: 'EXPOASEO',
+    industria: 'Servicios generales · Ecuador',
+    servicios: ['Diseño', 'Desarrollo', 'SEO', 'Infraestructura'],
+    resumen:
+      'Sitio corporativo para una empresa de servicios generales con cobertura nacional.',
+    url: 'https://expoaseo.com',
+    caso: {
+      challenge:
+        'Modernizar la presencia digital de una empresa con más de 15 años de trayectoria, comunicando múltiples líneas de servicio sin perder claridad ni rendimiento.',
+      approach:
+        'Se diseñó una experiencia institucional centrada en jerarquía visual, contenido real, confianza, contacto rápido y optimización técnica.',
+      solution:
+        'Sitio corporativo responsive con contacto por WhatsApp, postulaciones laborales con carga segura de hojas de vida, SEO técnico e infraestructura en Cloudflare.',
+      // Informe móvil del 30/09/2026, verificado al integrar el proyecto:
+      // https://pagespeed.web.dev/analysis/https-expoaseo-com/hnl5h551fg?hl=es&form_factor=mobile
+      result:
+        'Publicado en producción y preparado para captación comercial, postulaciones y visibilidad orgánica. Durante su validación final obtuvo 100 en Performance, Accessibility, Best Practices y SEO en Google PageSpeed Insights; las puntuaciones pueden variar con el tiempo.',
+    },
+    desktop: expoaseoDesktop,
+    mobile: expoaseoMobile,
+  },
+  {
+    id: 'carolina-alvarez',
+    nombre: 'Carolina Álvarez',
+    corto: 'Carolina Álvarez',
+    industria: 'Servicios jurídicos · Ecuador',
+    servicios: ['Identidad', 'Diseño', 'Desarrollo', 'SEO'],
+    resumen:
+      'Sitio jurídico para marca personal, servicios especializados y publicaciones.',
+    url: 'https://carolinaalvareze.com',
+    caso: {
+      challenge:
+        'Construir una presencia digital personal capaz de comunicar especialización jurídica, confianza profesional y contenido editorial sin caer en una estética legal genérica.',
+      approach:
+        'Se trabajó una dirección visual editorial, una arquitectura multipágina y un sistema escalable de publicaciones con SEO específico por contenido.',
+      solution:
+        'Sitio con identidad propia, servicios de Derecho Penal, Tributación y Penal Económico, publicaciones mediante datos estructurados y contacto directo.',
+      result:
+        'Una plataforma jurídica responsive que combina servicios profesionales, marca personal, contacto directo y publicación de contenido especializado.',
+    },
+    desktop: carolinaDesktop,
+    mobile: carolinaMobile,
+  },
+  {
     id: 'david-celi',
-    num: '02',
     nombre: 'David Celi Lupera',
     corto: 'David Celi',
     industria: 'Legal · Ecuador',
@@ -118,7 +167,6 @@ export const proyectos = [
   },
   {
     id: 'carla-alvarez',
-    num: '03',
     nombre: 'Carla Álvarez Manrique',
     corto: 'Carla Álvarez',
     industria: 'Legal · Ecuador',
